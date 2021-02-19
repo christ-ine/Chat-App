@@ -12,7 +12,7 @@ const io = socketio(server);
 //Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-const chatAdmin = 'ChatApp Admin';
+const chatAdmin = 'MusicHeads Admin';
 
 //Run when client connects
 io.on('connection', socket => {
@@ -22,7 +22,7 @@ io.on('connection', socket => {
         socket.join(user.room)
 
         //Welcome current user
-        socket.emit('message', formatMessage(chatAdmin, 'Welcome to ChatApp!'));
+        socket.emit('message', formatMessage(chatAdmin, 'Welcome to MusicHeads!'));
 
         //Broadcast when a user connects
         socket.broadcast
